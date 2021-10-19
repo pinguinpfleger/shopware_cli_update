@@ -66,7 +66,7 @@ mysqldump -Q $dbname > ${temp}/${dbname}.sql
 tar -zcf ${temp}/shop_docroot.tar.gz ${docroot}/
 
 # download
-upjson_uri="https://update-api.shopware.com/v1/release/update?channel=stable&shopware_version=5"
+upjson_uri="https://update-api.shopware.com/v1/release/update?channel=stable&shopware_version=5.99"
 curl -s ${upjson_uri} -o ${temp}/update.json
 
 updl_version=$(cat update.json | jq '.version' | tr -d \" )
